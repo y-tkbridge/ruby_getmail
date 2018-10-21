@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ruby:
+    build: .
+    container_name: slack_mail
+    environment:
+      SLACK_API_TOKEN: ${SLACK_API_TOKEN}
+      REPLE_AI_TOKEN: ${REPLE_AI_TOKEN}
+      REPLE_AI_BOTID: ${REPLE_AI_BOTID}
+      REPLE_AI_SCENARIO: ${REPLE_AI_SCENARIO}
+      IMAP_HOST: ${IMAP_HOST}
+      IMAP_PORT: ${IMAP_PORT}
+      IMAP_USESSL: ${IMAP_USESSL}
+      IMAP_USER: ${IMAP_USER}
+      IMAP_USER_PASSWD: ${IMAP_USER_PASSWD}
+    volumes:
+      - ./app:/app
+    tty: true
